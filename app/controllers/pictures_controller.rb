@@ -45,7 +45,5 @@ class PicturesController < ApplicationController
       render :edit
     end
   end
-  
-  end
 
 end
