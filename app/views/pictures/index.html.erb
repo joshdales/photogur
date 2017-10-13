@@ -2,8 +2,6 @@
 <%= link_to("New Picture", pictures_new_path) %>
 
 <% @most_recent_pictures.each do |picture| %>
-  <% if picture.created_at < 1.month.ago %>
-    <p> <%= picture.title %>, <%= picture.artist %></p>
-    <%= link_to(image_tag(picture.url), pictures_show_path(picture.id)) %>
-  <% end %>
+  <p> <%= picture.title %>, <%= picture.artist %></p>
+  <%= link_to(image_tag(picture.url), pictures_show_path(picture.id)) %>
 <% end %>
