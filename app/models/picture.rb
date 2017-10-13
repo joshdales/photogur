@@ -4,7 +4,7 @@ class Picture < ApplicationRecord
     Picture.order("created_at DESC")
   end
 
-  def delf.most_recent_five
+  def self.most_recent_five
     Picture.newest_first.limit(5)
   end
 
