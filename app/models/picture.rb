@@ -16,6 +16,10 @@ class Picture < ApplicationRecord
     Picture.where("created_at LIKE ?", "%#{ year }%")
   end
 
-
+  def self.getting_year
+    Picture.all.map do |picture|
+      picture.created_at.year
+    end
+  end
 
 end
