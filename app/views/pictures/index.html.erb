@@ -9,3 +9,8 @@
 <% @older_than_month.each do |old_picture| %>
   <%= render 'display_picture', picture: old_picture %>
 <% end %>
+
+<h3>View images by year</h3>
+<% @years.each do |year| %>
+  <%= link_to("#{ year }", pictures_year_path(year)) %>
+<% end %>

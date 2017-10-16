@@ -4,6 +4,7 @@ class PicturesController < ApplicationController
     @pictures = Picture.all
     @most_recent_pictures = Picture.most_recent_five
     @older_than_month = Picture.created_before(1.month.ago)
+    @years = Picture.getting_year
   end
 
   def show
