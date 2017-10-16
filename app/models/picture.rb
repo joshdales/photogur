@@ -17,9 +17,7 @@ class Picture < ApplicationRecord
   end
 
   def self.getting_year
-    Picture.all.map do |picture|
-      picture.created_at.year
-    end
+    Picture.all.map { |picture| picture.created_at.year }.uniq!
   end
 
 end
