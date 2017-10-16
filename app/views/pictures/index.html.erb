@@ -5,3 +5,9 @@
   <p> <%= picture.title %>, <%= picture.artist %></p>
   <%= link_to(image_tag(picture.url), pictures_show_path(picture.id)) %>
 <% end %>
+
+<h3>Highlights from last month</h3>
+<%= @older_than_month.each do |picture| %>
+  <p> <%= picture.title %>, <%= picture.artist %></p>
+  <%= link_to(image_tag(picture.url), pictures_show_path(picture.id)) %>
+<% end %>
