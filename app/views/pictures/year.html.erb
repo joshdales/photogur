@@ -1,0 +1,5 @@
+<h1><%= params[:id] %></h1>
+
+<% @pictures.each do |year_picture| %>
+  <%= render 'display_picture', picture: year_picture %>
+<% end %>

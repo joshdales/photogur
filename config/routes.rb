@@ -8,10 +8,12 @@ Rails.application.routes.draw do
   post 'pictures' => 'pictures#create'
   get 'pictures/new' => 'pictures#new'
 
+  get 'pictures/year/:id' => 'pictures#year', as: "pictures_year"
+
   get 'pictures/:id' => 'pictures#show', as: "pictures_show"
 
-  get 'pictures/:id/edit' => "pictures#edit", as: "pictures_edit"
-  patch 'pictures/:id' => "pictures#update"
+  get 'pictures/:id/edit' => 'pictures#edit', as: "pictures_edit"
+  patch 'pictures/:id' => 'pictures#update'
 
   delete 'pictures/:id' => 'pictures#destroy'
 

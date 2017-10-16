@@ -16,4 +16,6 @@ class Picture < ApplicationRecord
     Picture.where("created_at LIKE ?", "%#{ year }%")
   end
 
+
+
 end

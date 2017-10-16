@@ -10,6 +10,10 @@ class PicturesController < ApplicationController
     @picture = Picture.find(params[:id])
   end
 
+  def year
+    @pictures = Picture.created_in_year(params[:id])
+  end
+
   def new
     @picture = Picture.new
   end
