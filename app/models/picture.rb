@@ -1,7 +1,7 @@
 class Picture < ApplicationRecord
 
   validates :artist, :title, :url, presence: true
-  validates :url_starts, presence: true
+  validate :url_starts
 
   def url_starts
     return unless url.present?
