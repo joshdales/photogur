@@ -6,7 +6,7 @@ class Picture < ApplicationRecord
   def url_starts
     return unless url.present?
     url.starts_with?("http")
-    # errors.add.(name: "URL must start with http") if not url.starts_with?("http")
+    errors.add(:url, "must start with http") if not url.starts_with?("http")
   end
 
   def self.newest_first

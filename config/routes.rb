@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'pictures/:id' => 'pictures#show', as: "pictures_show"
 
   get 'pictures/:id/edit' => 'pictures#edit', as: "pictures_edit"
-  patch 'pictures/:id' => 'pictures#update'
+  patch 'pictures/:id' => 'pictures#update', as: "picture"
 
   delete 'pictures/:id' => 'pictures#destroy'
 
