@@ -1,13 +1,17 @@
 class Picture < ApplicationRecord
 
-  validates :artist, :title, :url, presence: true
-  validate :url_starts
+  validates :artist, :title, :url, presence: { :message => "Avast ye scallewag! Ya need to put somethin' in thar!" }
+  validate :url_starts_with_http
 
-  def url_starts
+  def url_starts_with_http
     return unless url.present?
     url.starts_with?("http")
     errors.add(:url, "must start with http") if not url.starts_with?("http")
   end
+
+  # def is_it_there
+  #   return unless
+  # end
 
   def self.newest_first
     Picture.order("created_at DESC")
