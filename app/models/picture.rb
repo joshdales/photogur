@@ -3,6 +3,11 @@ class Picture < ApplicationRecord
   validates :artist, :title, :url, presence: true
   validates :url_starts, presence: true
 
+  def url_starts
+    return unless url.present?
+    url.starts_with?("http")
+    # errors.add.(name: "URL must start with http") if not url.starts_with?("http")
+  end
 
   def self.newest_first
     Picture.order("created_at DESC")
@@ -23,12 +28,4 @@ class Picture < ApplicationRecord
   def self.getting_year
     Picture.all.map { |picture| picture.created_at.year }.uniq!
   end
-
-private
-  def url_starts
-    return unless url.present?
-    url.starts_with?("http")
-    # errors.add.(name: "URL must start with http") if not url.starts_with?("http")
-  end
-
 end
