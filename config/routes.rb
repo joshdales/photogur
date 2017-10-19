@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-
-  get 'sessions/create'
-
-  get 'sessions/destory'
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'pictures#index'
@@ -25,6 +19,12 @@ Rails.application.routes.draw do
 
   get 'users/new' => 'users#new', as: "new_user"
   post 'users' => 'users#create'
+
+  get 'sessions/new' => 'sessions#new'
+
+  post 'sessions/create' => 'sessions#create'
+
+  delete 'sessions/destory' => 'sessions#destroy'
 
 
 
