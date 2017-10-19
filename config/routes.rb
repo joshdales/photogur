@@ -5,10 +5,8 @@ Rails.application.routes.draw do
 
   get 'pictures' => 'pictures#index'
 
-  post 'pictures' => 'pictures#create'
   get 'pictures/new' => 'pictures#new', as: "new_picture"
-
-  get 'pictures/year/:id' => 'pictures#year', as: "pictures_year"
+  post 'pictures' => 'pictures#create'
 
   get 'pictures/:id' => 'pictures#show', as: "show_picture"
 
@@ -17,7 +15,9 @@ Rails.application.routes.draw do
 
   delete 'pictures/:id' => 'pictures#destroy'
 
-  get 'users/new' => 'users#new', as: "new_users"
+  get 'pictures/year/:id' => 'pictures#year', as: "pictures_year"
+
+  get 'users/new' => 'users#new', as: "new_user"
   post 'users' => 'users#create'
 
 

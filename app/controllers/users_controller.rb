@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
 
   def new
-    #code
+    @user = User.new
   end
 
   def crete
     #code
   end
-  
+
 end
