@@ -5,7 +5,17 @@ class UsersController < ApplicationController
   end
 
   def crete
-    #code
+    @user = User.new
+
+    @user.email = params[:user][:email]
+    @user.password = params[:user][:password]
+    @user.password_confirmation = params[:user][:password_confirmation]
+
+    if @user.save
+      redirect_to root_url
+    else
+      render :new
+    end
   end
 
 end

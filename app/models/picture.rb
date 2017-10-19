@@ -9,10 +9,6 @@ class Picture < ApplicationRecord
     errors.add(:url, "must start with http") if not url.starts_with?("http")
   end
 
-  # def is_it_there
-  #   return unless
-  # end
-
   def self.newest_first
     Picture.order("created_at DESC")
   end
