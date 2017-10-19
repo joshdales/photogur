@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'users/new' => 'users#new', as: "new_user"
   post 'users' => 'users#create'
 
-  get 'sessions/new' => 'sessions#new'
+  get 'sessions/new' => 'sessions#new', as: "new_session"
 
   post 'sessions/create' => 'sessions#create'
 
