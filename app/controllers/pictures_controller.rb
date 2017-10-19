@@ -28,7 +28,7 @@ class PicturesController < ApplicationController
 
     if @picture.save
       # if the picture gets saved, generate a get request to "/pictures" (the index)
-      redirect_to "/pictures"
+      redirect_to root_url
     else
       # othewise render new.html.erb
       render :new
@@ -47,7 +47,7 @@ class PicturesController < ApplicationController
     @picture.url = params[:picture][:url]
 
     if @picture.save
-      redirect_to"/pictures/#{@picture.id}"
+      redirect_to show_picture_url(@picture.id)
     else
       render :edit
     end
@@ -56,7 +56,7 @@ class PicturesController < ApplicationController
   def destroy
     @picture = Picture.find(params[:id])
     @picture.destroy
-    redirect_to "/pictures"
+    redirect_to root_url
   end
 
 end

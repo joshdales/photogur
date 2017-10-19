@@ -10,9 +10,9 @@ Rails.application.routes.draw do
 
   get 'pictures/year/:id' => 'pictures#year', as: "pictures_year"
 
-  get 'pictures/:id' => 'pictures#show', as: "show_pictures"
+  get 'pictures/:id' => 'pictures#show', as: "show_picture"
 
-  get 'pictures/:id/edit' => 'pictures#edit', as: "edit_pictures"
+  get 'pictures/:id/edit' => 'pictures#edit', as: "edit_picture"
   patch 'pictures/:id' => 'pictures#update', as: "picture"
 
   delete 'pictures/:id' => 'pictures#destroy'
