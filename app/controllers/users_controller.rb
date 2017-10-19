@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def crete
+  def create
     @user = User.new
 
     @user.email = params[:user][:email]
