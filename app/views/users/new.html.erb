@@ -1,20 +1,22 @@
 <h1>Sign Up</h1>
+<%= link_to "Back to Pictures", pictures_path %>
+
 
 <%= form_for @user do |f| %>
 
 <p>
-  <%= f.label :email%>
   <%= f.email_field :email %>
+  <%= f.label :email%>
 </p>
 
 <p>
-  <%= f.label :password %>
   <%= f.password_field :password %>
+  <%= f.label :password %>
 </p>
 
 <p>
-  <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
+  <%= f.label :password_confirmation %>
 </p>
 
 <p><%= f.submit %></p>

@@ -1,15 +1,16 @@
 <h1>Log In</h1>
+<%= link_to "Back to Pictures", pictures_path %>
 
 <%= form_tag sessions_create_path do %>
-<div class="field">
-  <%= label_tag :email %><br>
+<p class="field">
   <%= email_field_tag :email, params[:email] %>
-</div>
+  <%= label_tag :email %><br>
+</p>
 
-<div class="field">
-  <%= label_tag :password %><br>
+<p class="field">
   <%= password_field_tag :password, params[:password] %>
-</div>
+  <%= label_tag :password %><br>
+</p>
 
-<div class="actions"><%= submit_tag "Log in" %></div>
-<% end %> %>
+<p class="actions"><%= submit_tag "Log in" %></p>
+<% end %>
