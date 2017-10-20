@@ -15,4 +15,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def ensure_owner
+    @picture = Picture.find(params[:id])
+    unless current_user.id == @picture.user_id
+      flash[:alert] = "You cannot make changes to this image"
+      redirect_to show_picture_url
+    end
+  end
+
 end

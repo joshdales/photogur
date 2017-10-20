@@ -38,10 +38,12 @@ class PicturesController < ApplicationController
   end
 
   def edit
+    ensure_owner
     @picture = Picture.find(params[:id])
   end
 
   def update
+    ensure_owner
     @picture = Picture.find(params[:id])
 
     @picture.title = params[:picture][:title]
@@ -56,6 +58,7 @@ class PicturesController < ApplicationController
   end
 
   def destroy
+    ensure_owner
     @picture = Picture.find(params[:id])
     @picture.destroy
     redirect_to root_url

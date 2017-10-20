@@ -8,6 +8,13 @@
 </head>
 <body>
 
+  <% if flash[:notice] %>
+      <p class="notice"><%= flash[:notice] %></p>
+    <% end %>
+    <% if flash[:alert] %>
+      <p class="altert"><%= flash[:alert] %></p>
+    <% end %>
+
   <p class="userinfo">
     <% if current_user %>
     Signed in as <%= current_user.email %>. <%= link_to "Log out", sessions_destory_path("current"), :method => :delete %>
