@@ -1,5 +1,7 @@
 class PicturesController < ApplicationController
   before_action :ensure_logged_in, except: [:show, :index, :year]
+  before_action :load_picture, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_owner, only: [:edit, :update, :destroy]
 
   def index
     @pictures = Picture.all
@@ -9,7 +11,6 @@ class PicturesController < ApplicationController
   end
 
   def show
-    @picture = Picture.find(params[:id])
   end
 
   def year
@@ -38,14 +39,9 @@ class PicturesController < ApplicationController
   end
 
   def edit
-    ensure_owner
-    @picture = Picture.find(params[:id])
   end
 
   def update
-    ensure_owner
-    @picture = Picture.find(params[:id])
-
     @picture.title = params[:picture][:title]
     @picture.artist = params[:picture][:artist]
     @picture.url = params[:picture][:url]
@@ -58,8 +54,6 @@ class PicturesController < ApplicationController
   end
 
   def destroy
-    ensure_owner
-    @picture = Picture.find(params[:id])
     @picture.destroy
     redirect_to root_url
   end
