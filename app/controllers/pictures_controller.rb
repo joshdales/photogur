@@ -1,4 +1,5 @@
 class PicturesController < ApplicationController
+  before_action :ensure_logged_in, except: [:show, :index, :year]
 
   def index
     @pictures = Picture.all
