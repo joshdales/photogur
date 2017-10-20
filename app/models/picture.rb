@@ -3,6 +3,8 @@ class Picture < ApplicationRecord
   validates :artist, :title, :url, presence: { :message => "Avast ye scallewag! Ya need to put somethin' in thar!" }
   validate :url_starts_with_http
 
+  belongs_to :user
+
   def url_starts_with_http
     return unless url.present?
     url.starts_with?("http")
